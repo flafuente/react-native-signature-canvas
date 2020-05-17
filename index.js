@@ -31,6 +31,7 @@ const SignatureView = ({
   customHtml = null,
   autoClear = false,
   imageType = "",
+  backgroundUrl= "",
 }) => {
   const [loading, setLoading] = useState(true);
   webViewRef = useRef();
@@ -44,9 +45,10 @@ const SignatureView = ({
     html = html.replace("<%description%>", descriptionText);
     html = html.replace("<%confirm%>", confirmText);
     html = html.replace("<%clear%>", clearText);
+    html = html.replace("<%backgroundUrl%>", backgroundUrl);
 
     return { html };
-  }, [customHtml, autoClear, imageType, webStyle, descriptionText, confirmText, clearText])
+  }, [customHtml, autoClear, imageType, webStyle, descriptionText, confirmText, clearText, backgroundUrl])
 
   const getSignature = e => {
     switch (e.nativeEvent.data) {

@@ -29,6 +29,7 @@ const content = `
         onBegin: () => window.ReactNativeWebView.postMessage("BEGIN"),
         onEnd: () => window.ReactNativeWebView.postMessage("END")
     });
+    signaturePad.fromDataURL('<%backgroundUrl%>');
 
     function clearSignature (event) {
         signaturePad.clear();

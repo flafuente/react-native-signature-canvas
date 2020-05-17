@@ -219,6 +219,7 @@ const content = `
           var _this = this;
           if (options === void 0) { options = {}; }
           var image = new Image();
+          image.crossOrigin = "anonymous";
           var ratio = options.ratio || window.devicePixelRatio || 1;
           var width = options.width || this.canvas.width / ratio;
           var height = options.height || this.canvas.height / ratio;
